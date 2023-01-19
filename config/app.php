@@ -19,6 +19,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Application Quote
+    |--------------------------------------------------------------------------
+    |
+    | This value is the quote of your application. This value is used when the
+    | framework needs to place the application's quote in a notification or
+    | any other location as required by the application or its packages.
+    |
+    */
+
+    'quote' => env('APP_QUOTE', 'Laravel'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Environment
     |--------------------------------------------------------------------------
     |
