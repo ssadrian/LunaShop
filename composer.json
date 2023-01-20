@@ -37,12 +37,6 @@
         }
     },
     "scripts": {
-        "setup": [
-            "npm install",
-            "@php artisan migrate",
-            "@php artisan lunar:install",
-            "@php artisan serve"
-        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"

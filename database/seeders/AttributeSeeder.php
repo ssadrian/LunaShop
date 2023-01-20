@@ -8,36 +8,36 @@ use Illuminate\Support\Facades\DB;
 
 class AttributeSeeder extends AbstractSeeder
 {
-  /**
-   * Run the database seeds.
-   *
-   * @return void
-   */
-  public function run()
-  {
-    $attributes = $this->getSeedData('attributes');
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $attributes = $this->getSeedData('attributes');
 
-    $attributeGroup = AttributeGroup::first();
+        $attributeGroup = AttributeGroup::first();
 
-    DB::transaction(function () use ($attributes, $attributeGroup) {
-      foreach ($attributes as $attribute) {
-        Attribute::create([
-          'attribute_group_id' => $attributeGroup->id,
-          'attribute_type' => $attribute->attribute_type,
-          'handle' => $attribute->handle,
-          'section' => 'main',
-          'type' => $attribute->type,
-          'required' => false,
-          'searchable' => true,
-          'filterable' => false,
-          'system' => false,
-          'position' => $attributeGroup->attributes()->count() + 1,
-          'name' => [
-            'en' => $attribute->name,
-          ],
-          'configuration' => (array)$attribute->configuration,
-        ]);
-      }
-    });
-  }
+        DB::transaction(function () use ($attributes, $attributeGroup) {
+            foreach ($attributes as $attribute) {
+                Attribute::create([
+                    'attribute_group_id' => $attributeGroup->id,
+                    'attribute_type' => $attribute->attribute_type,
+                    'handle' => $attribute->handle,
+                    'section' => 'main',
+                    'type' => $attribute->type,
+                    'required' => false,
+                    'searchable' => true,
+                    'filterable' => false,
+                    'system' => false,
+                    'position' => $attributeGroup->attributes()->count() + 1,
+                    'name' => [
+                        'en' => $attribute->name,
+                    ],
+                    'configuration' => (array) $attribute->configuration,
+                ]);
+            }
+        });
+    }
 }

@@ -2,14 +2,14 @@
 
 namespace App\Http\Livewire;
 
+use Livewire\Component;
+use Livewire\ComponentConcerns\PerformsRedirects;
 use Lunar\Facades\CartSession;
 use Lunar\Facades\Payments;
 use Lunar\Facades\ShippingManifest;
 use Lunar\Models\Cart;
 use Lunar\Models\CartAddress;
 use Lunar\Models\Country;
-use Livewire\Component;
-use Livewire\ComponentConcerns\PerformsRedirects;
 
 class CheckoutPage extends Component
 {
@@ -327,19 +327,19 @@ class CheckoutPage extends Component
     protected function getAddressValidation($type)
     {
         return [
-            "{$type}.first_name" => 'required',
-            "{$type}.last_name" => 'required',
-            "{$type}.line_one" => 'required',
-            "{$type}.country_id" => 'required',
-            "{$type}.city" => 'required',
-            "{$type}.postcode" => 'required',
-            "{$type}.company_name" => 'nullable',
-            "{$type}.line_two" => 'nullable',
-            "{$type}.line_three" => 'nullable',
-            "{$type}.state" => 'nullable',
-            "{$type}.delivery_instructions" => 'nullable',
-            "{$type}.contact_email" => 'required|email',
-            "{$type}.contact_phone" => 'nullable',
+            "$type.first_name" => 'required',
+            "$type.last_name" => 'required',
+            "$type.line_one" => 'required',
+            "$type.country_id" => 'required',
+            "$type.city" => 'required',
+            "$type.postcode" => 'required',
+            "$type.company_name" => 'nullable',
+            "$type.line_two" => 'nullable',
+            "$type.line_three" => 'nullable',
+            "$type.state" => 'nullable',
+            "$type.delivery_instructions" => 'nullable',
+            "$type.contact_email" => 'required|email',
+            "$type.contact_phone" => 'nullable',
         ];
     }
 

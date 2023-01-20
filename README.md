@@ -3,16 +3,17 @@
 ---
 ## Setup
 
-Initial setup is done via
+Make sure vite is up and running in dev mode
 ```text
-composer setup
+npm run dev
 ```
 
-Or step by step setup
+Initial setup must be executed in this order and is done via
 
 ```text
 npm install  
+php artisan lunar:install // Required, sets up the admin user and app
 php artisan migrate
-php artisan lunar:install // Sets up the admin user and app
+php artisan db:seed       // Optional, if you want some default data
 php artisan serve
 ```
