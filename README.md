@@ -1,6 +1,8 @@
 # LunaShop
 
----
+## Control Panel
+The control panel is found on [/hub](http://localhost/hub)
+
 ## Setup
 
 - Make sure vite is up and running in dev mode
