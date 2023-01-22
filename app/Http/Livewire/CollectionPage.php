@@ -40,7 +40,7 @@ class CollectionPage extends Component
     /**
      * Computed property to return the collection.
      *
-     * @return \Lunar\Models\Collection
+     * @return Collection
      */
     public function getCollectionProperty()
     {

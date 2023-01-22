@@ -78,11 +78,10 @@ class ProductSeeder extends AbstractSeeder
                     'product_id' => $productModel->id,
                     'purchasable' => 'always',
                     'shippable' => true,
-                    'stock' => 0,
+                    'stock' => 500,
                     'backorder' => 0,
                     'sku' => $product->sku,
                     'tax_class_id' => $taxClass->id,
-                    'stock' => 500,
                 ]);
 
                 Price::create([
@@ -95,7 +94,7 @@ class ProductSeeder extends AbstractSeeder
                 ]);
 
                 $media = $productModel->addMedia(
-                    base_path("database/seeders/data/images/{$product->image}")
+                    base_path("database/seeders/data/images/$product->image")
                 )->preservingOriginal()->toMediaCollection('products');
 
                 $media->setCustomProperty('primary', true);
